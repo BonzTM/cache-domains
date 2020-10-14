@@ -14,6 +14,7 @@ PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
 cd "${REPO_DIR}"
 {
   git fetch
+  git pull
   git diff master origin/master
 } &> /dev/null
 
