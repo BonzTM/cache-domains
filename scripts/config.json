@@ -1,0 +1,8 @@
+{
+    "ips": {
+        "generic": "172.16.37.45"
+    },
+    "cache_domains": {
+        "default": "generic"
+    }
+}
