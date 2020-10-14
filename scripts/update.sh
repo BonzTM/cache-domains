@@ -8,6 +8,7 @@ echo "============================================"
 CUR_DIR=$(pwd)
 REPO_DIR=${HOME}/git/cache-domains/scripts/
 DNSMASQ_DIR=/etc/dnsmasq.d/
+HOSTS_DIR=/opt/lancache_hosts
 PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
 
 # Fetch master branch from uklans
@@ -34,7 +35,8 @@ else
     git push -f BonzTM BonzTM
     # Update pihole dnsmasq
     ./create-dnsmasq.sh
-    sudo cp -rf ./output/dnsmasq/* ${DNSMASQ_DIR}
+    sudo cp -rf ./output/dnsmasq/lancache.conf ${DNSMASQ_DIR}
+    sudo cp -rf ./output/dnsmasq/*hosts ${HOSTS_DIR}
   } &> /dev/null
   # Restart pihole to update lancache domains
   echo "Restarting Pi-hole DNS..."
