@@ -45,7 +45,7 @@ while read -r entry; do
                 while read -r filename; do
                         destfilename=$(echo $filename | sed -e 's/txt/hosts/')
                         outputfile=${outputdir}/${destfilename}
-                        echo "addn-hosts=/etc/dnsmasq.d/${destfilename}" >> ${outputdir}/lancache.conf
+                        echo "addn-hosts=/opt/lancache_hosts/${destfilename}" >> ${outputdir}/lancache.conf
                         touch "$outputfile"
                         while read -r fileentry; do
                                 # Ignore comments
